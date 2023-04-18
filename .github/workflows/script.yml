@@ -40,8 +40,8 @@ jobs:
      
       
       
-      - name: Set up Git credentials
-        uses: actions/setup-git@v2
+      #- name: Set up Git credentials
+       # uses: actions/setup-git@v2
       
       - name: setup python
         uses: actions/setup-python@v4
