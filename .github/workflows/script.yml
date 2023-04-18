@@ -25,13 +25,13 @@ jobs:
         with:
          repository: https://github.com/AssafGPlaystream/Twitch-API.git
          ref: AssafGPlaystream/Twitch-API@main
-      - name: Set up Git credentials
-        uses: actions/setup-git@v2
-        with:
+      #- name: Set up Git credentials
+        #uses: actions/setup-git@v2
+        #with:
          # The email address for the Git commit
-         email: 'assafg@playstream.gg'
+         #email: 'assafg@playstream.gg'
          # The username for the Git commit
-         name: 'Assaf G'
+         #name: 'Assaf G'
          # The personal access token (PAT) for the repository, stored in a GitHub secret
          # To create a secret, go to your repository settings and click "Secrets"
          # Name your secret "PAT" and enter the PAT value
