@@ -23,7 +23,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-         repository: https://github.com/AssafGPlaystream/Twitch-API.git
+         repository: AssafGPlaystream/Twitch-API
          ref: AssafGPlaystream/Twitch-API@main
       #- name: Set up Git credentials
         #uses: actions/setup-git@v2
