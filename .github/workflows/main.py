@@ -12,9 +12,12 @@ def get_filtered_streamers(language):
     root_dir = os.getcwd()
 
     print(f"Root-path: {root_dir}")
+    
+    
+    
 
     # all_path = os.path.join(root_dir, "All.csv")
-    all_path = ALL_URL
+    all_path = os.getenv('ALL_URL')
     # only write the lang here to scrape and run code!!!!!!!
     Language = language
 
@@ -22,7 +25,7 @@ def get_filtered_streamers(language):
     CLIENT_ID = "dcmuk7wb06aro1cru1lz0ak8k2fs21"
 
     # tokens_path = os.path.join(root_dir, "tokens.txt")
-    tokens_path = TOKENS_URL
+    tokens_path = os.getenv('TOKENS_URL')
 
     with open(tokens_path) as f:
         access_token = f.readline().strip()
@@ -188,13 +191,15 @@ def get_filtered_streamers(language):
 
 
     if Input_Folder_Language == En:
-        Output_Path = EN_OUTPUT_URL
+        Output_Path = os.getenv('EN_OUTPUT_URL')
+        
         #Output_Path = os.path.join(root_dir, "en_output.csv")
     elif Input_Folder_Language == Es:
-        Output_Path = ES_OUTPUT_URL
+        
+        Output_Path = os.getenv('ES_OUTPUT_URL')
         #Output_Path = os.path.join(root_dir, "es_output.csv")
     elif Input_Folder_Language == Pt:
-        Output_Path = PT_OUTPUT_URL
+        Output_Path = os.getenv('PT_OUTPUT_URL')
         #Output_Path = os.path.join(root_dir, "pt_output.csv")
 
     # Read All.csv
