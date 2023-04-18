@@ -13,16 +13,16 @@ def get_filtered_streamers(language):
 
     print(f"Root-path: {root_dir}")
 
-    all_path = os.path.join(root_dir, "All.csv")
-
+    # all_path = os.path.join(root_dir, "All.csv")
+    all_path = ALL_URL
     # only write the lang here to scrape and run code!!!!!!!
     Language = language
 
     # Replace with your Twitch API client ID and OAuth token
     CLIENT_ID = "dcmuk7wb06aro1cru1lz0ak8k2fs21"
 
-    tokens_path = os.path.join(root_dir, "tokens.txt")
-
+    # tokens_path = os.path.join(root_dir, "tokens.txt")
+    tokens_path = TOKENS_URL
 
     with open(tokens_path) as f:
         access_token = f.readline().strip()
@@ -188,11 +188,14 @@ def get_filtered_streamers(language):
 
 
     if Input_Folder_Language == En:
-        Output_Path = os.path.join(root_dir, "en_output.csv")
+        Output_Path = EN_OUTPUT_URL
+        #Output_Path = os.path.join(root_dir, "en_output.csv")
     elif Input_Folder_Language == Es:
-        Output_Path = os.path.join(root_dir, "es_output.csv")
+        Output_Path = ES_OUTPUT_URL
+        #Output_Path = os.path.join(root_dir, "es_output.csv")
     elif Input_Folder_Language == Pt:
-        Output_Path = os.path.join(root_dir, "pt_output.csv")
+        Output_Path = PT_OUTPUT_URL
+        #Output_Path = os.path.join(root_dir, "pt_output.csv")
 
     # Read All.csv
     all_df = pd.read_csv(all_path, dtype=str)
@@ -254,12 +257,12 @@ def get_filtered_streamers(language):
 def main():
 
     get_filtered_streamers('pt')
-    get_filtered_streamers('es')
-    get_filtered_streamers('en')
-    get_filtered_streamers('de')
-    get_filtered_streamers('ru')
-    get_filtered_streamers('fr')
-    get_filtered_streamers('it')
+    #get_filtered_streamers('es')
+    #get_filtered_streamers('en')
+    #get_filtered_streamers('de')
+    #get_filtered_streamers('ru')
+    #get_filtered_streamers('fr')
+    #get_filtered_streamers('it')
 
 if __name__ == '__main__':
     main()
