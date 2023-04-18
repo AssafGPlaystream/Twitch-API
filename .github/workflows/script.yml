@@ -19,10 +19,25 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code
+        uses: actions/checkout@v2
         with:
-          ref: main # checkout the main branch
+         ref: AssafGPlaystream/Twitch-API@main
+      - name: Set up Git credentials
+        uses: actions/setup-git@v2
+        with:
+         # The email address for the Git commit
+         email: 'assafg@playstream.gg'
+         # The username for the Git commit
+         name: 'Assaf G'
+         # The personal access token (PAT) for the repository, stored in a GitHub secret
+         # To create a secret, go to your repository settings and click "Secrets"
+         # Name your secret "PAT" and enter the PAT value
+         # token: ${{ secrets.PAT }}
+      
+     
+      
       
       - name: Set up Git credentials
         uses: actions/setup-git@v2
