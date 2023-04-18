@@ -35,3 +35,13 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a Python script
         run: python .github/workflows/main.py
+
+      - name: Push to github
+        run: |
+         git config user.name AssafGPlaystream
+         git config user.email assafg@playstream.gg
+         git add .
+         git commit -m "generated"
+         git push
+
+      
