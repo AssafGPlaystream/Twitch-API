@@ -35,9 +35,17 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a Python script
         run: python .github/workflows/main.py
+        env:
+          ALL_URL: ${{ github.workspace }}/data/All.csv
+          TOKENS_URL: ${{ github.workspace }}/data/tokens.txt
+          EN_OUTPUT_URL: ${{ github.workspace }}/data/en_output.csv
+          ES_OUTPUT_URL: ${{ github.workspace }}/data/en_output.csv
+          PT_OUTPUT_URL: ${{ github.workspace }}/data/en_output.csv
 
       - name: Push to github
         run: |
+         git config --global user.name "Assaf G"
+         git config --global user.email "assafg@playstream.gg"
          git add .
          git commit -m "generated"
          git push
